@@ -13,21 +13,24 @@
 </head>
 
 <body>
-    <section class="flex justify-center items-center h-screen">
+
+    <!-- form section -->
+    <section id="form-section" class="flex justify-center items-center h-screen">
 
         <div class="form bg-blue-900 p-24 text-white font-bold text-xl">
             <h1 class="text-2xl font-bold text-white text-center m-8">User Form</h1>
             <div class="grid grid-cols-2 px-2 py-4">
                 <label for="name">Name: </label>
-                <input type="text">
+                <input class="text-blue-900" type="text" id="signup-name-id">
+                
             </div>
             <div class="grid grid-cols-2 px-2 py-4">
                 <label for="name">Password: </label>
-                <input type="text">
+                <input class="text-blue-900" type="text" id="pwd-id">
             </div>
             <div class="grid grid-cols-2 px-2 py-4">
                 <label for="number">Age: </label>
-                <input type="Number">
+                <input class="text-blue-900" type="Number" id="age-id" min="15" max="100">
             </div>
             <div class="grid grid-cols-2  py-4">
                 <label for="gender" >Gender: </label>
@@ -39,15 +42,46 @@
                 </div>
             </div>
 
-           <div class="grid grid-cols-2 m-4 text-blue-900">
-            <button class="bg-sky-300 p-5 rounded-lg mx-4 my-2">Sign Up</button>
-            <button class="bg-sky-300 p-5 rounded-lg  mx-4 my-2">Log In</button>    
+           <div class="grid grid-cols-1 m-4 text-blue-900">
+
+            <button id="signup-btn-id" type="button" data-modal-target="signup-authentication-modal" data-modal-toggle="signup-authentication-modal" class="bg-sky-300 p-5 rounded-lg mx-4 my-2">Sign Up</button>
+
+
+            <button type="button" data-modal-target="login-authentication-modal" data-modal-toggle="login-authentication-modal" class="bg-sky-300 p-5 rounded-lg  mx-4 my-2" >Log In</button>    
            </div>
         </div>
 
 
     </section>
 
+    <!-- modal section -->
+    
+
+  
+ 
+
+
+
+  <!-- Main modal login -->
+  <div id="login-authentication-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full">
+      <div class="relative w-full h-full max-w-md md:h-auto">
+          <!-- Modal content -->
+          <div class="bg-slate-500 p-12 flex flex-col justify-center items-center gap-4">
+            <div>
+                <label for="username" class="font-bold text-blue-900 text-xl ">Username</label>
+                <input id="username-signup" type="text" class="block text-white bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 my-2">
+            </div>
+
+            <div>
+                <label for="username" class="font-bold text-blue-900 text-xl">Password</label>
+                <input id="username-password" type="text" class="block text-white bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 my-2">
+            </div>
+
+            <button class="text-blue p-2.5 bg-sky-300 rounded font-bold text-blue-900">Log In</button>
+          </div>
+      </div>
+  </div> 
+  
 
     <script src="./user.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>

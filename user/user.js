@@ -1,30 +1,8 @@
-function formVallidate(){
-
+// geeting inpt value
+function gettingInputValue (id){
+    const inputField = document.getElementById(id);
+    const inputValue = inputField.value;
+    console.log(inputValue);
 }
 
-
-// getting the useremail
-var userEmail = document.getElementById('email-signup');
-var userEmailValue = userEmail.value;
-
-document.getElementById('signup-btn').addEventListener('click', function(){
-    console.log(userEmailValue);
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-const signUpBtn = document.getElementById('signup-btn').addEventListener('click', function(){
-    const emailId = document.getElementById('email-signup');
-    const emailValue = emailId.value;
-    console.log(emailValue);
-})
+gettingInputValue('email-signup');

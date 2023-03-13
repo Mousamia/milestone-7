@@ -17,16 +17,17 @@
     <!-- form section -->
     <section id="form-section" class="flex justify-center items-center h-screen">
 
-        <div class="form bg-blue-900 p-24 text-white font-bold text-xl">
+        <div  class="form bg-blue-900 p-24 text-white font-bold text-xl">
             <h1 class="text-2xl font-bold text-white text-center m-8">User Form</h1>
-            <div class="grid grid-cols-2 px-2 py-4">
+            <div id="name-section" class="grid grid-cols-2 px-2 py-4" ">
                 <label for="name">Name: </label>
-                <input class="text-blue-900" type="text" id="signup-name-id">
+                <input  placeholder="enter username..." class="text-blue-900 required:border-red-500" type="text" id="signup-name-id" >
                 
             </div>
-            <div class="grid grid-cols-2 px-2 py-4">
+            <div id="pwd-section" class="grid grid-cols-2 px-2 py-4">
                 <label for="name">Password: </label>
-                <input class="text-blue-900" type="text" id="pwd-id">
+                <input class=" text-blue-900" type="text" id="pwd-id" placeholder="enter password...">
+                
             </div>
             <div class="grid grid-cols-2 px-2 py-4">
                 <label for="number">Age: </label>

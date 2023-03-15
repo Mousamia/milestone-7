@@ -6,13 +6,21 @@ function gettingInputValue(id) {
     return inputValue;
 }
 
-const signUpBtn = document.getElementById('signupBtnId').addEventListener('click', function () {
+const signUpBtn = document.getElementById('signupBtnId');
+console.log(addEventListener);
+signUpBtn.addEventListener('click', function(){
     const signupName = gettingInputValue('signup-name-id');
-    console.log(typeof (signupName));
     const signupPwd = gettingInputValue('pwd-id');
-    console.log(typeof (signupPwd))
-    formVallidation(signupName, signupPwd);
+    const boyos = gettingInputValue('age-id');
+    formVallidation(signupName, signupPwd, boyos);
 })
+console.log(signUpBtn);
+
+
+
+
+
+
 
 
 
@@ -27,14 +35,14 @@ function formVallidation(name, pwd, boyos) {
         if (password.length < 8) throw "password must be minimun 8 characters";
         if (password.includes('-')) throw "remove hyphen";
         
-        else{
-            location.href = './sign-up.html';
-        }
+        // else{
+        //     location.href = './sign-up.html';
+        // }
 
     }
     catch (err) {
 
-        if (true) {
+        if (username == "") {
             const paraname = document.createElement('span');
             paraname.innerText = `${err}`;
             // paraname.classList('peer-invalid:visible');
@@ -53,6 +61,8 @@ function formVallidation(name, pwd, boyos) {
             passwordField.appendChild(para);
             console.log(err);
         }
+
+        
 
         
     }

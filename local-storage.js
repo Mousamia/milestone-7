@@ -17,6 +17,7 @@ const addProduct = () => {
     ul.appendChild(li);
     getLoacalStorage();
     saveProductToLocalStorage(productName, productquantity);
+    showProductsfromLocalStorage();
 }
 
 // checking if the item exists in localstorage
@@ -25,7 +26,6 @@ const getLoacalStorage = () => {
     let cart = {};
     let storedCart = localStorage.getItem('cart');
     // let samia = localStorage.getItem('samia');
-    console.log(cart);
     if(storedCart){
         cart = JSON.parse(storedCart);
         // cart = JSON.parse(samia);
@@ -42,6 +42,16 @@ const saveProductToLocalStorage = (productName, productquantity) => {
 
     const stringyfied = JSON.stringify(cart);
     localStorage.setItem("cart", stringyfied);
-    console.log(cart);
+    ;
 
+}
+
+
+const showProductsfromLocalStorage = () => {
+    const cart = getLoacalStorage();
+    console.log(cart);
+    console.log(typeof( cart));
+    for(const product in cart){
+        console.log(`${product}, ${cart[product]} `);
+    }
 }
